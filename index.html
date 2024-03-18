@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Hotel booking</title>
+   <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg">
+   <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+   <!-- bootstrap cdn css  -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+   <!-- ow carousel  -->
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+      referrerpolicy="no-referrer" />
+
+   <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+   <link rel="stylesheet" href="./assets/css/style.css" />
+   <link rel="stylesheet" href="./assets/css/responsive.css">
+</head>
+
+<body>
+   <!-- navigation section  -->
+   <header class="navigation-sec">
+      <div class="container">
+         <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+               <a class="navbar-brand" href="index.html">
+                  <img src="./assets/images/logo.png" alt="" width="170" />
+               </a>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                  aria-label="Toggle navigation">
+                  <div class="container-menu-box" onclick="myFunction(this)">
+                     <div class="bar1"></div>
+                     <div class="bar2"></div>
+                     <div class="bar3"></div>
+                   </div>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center cus-drop" href="#" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                           All Services
+                           <iconify-icon icon="ep:arrow-down" class="ms-2"></iconify-icon>
+                        </a>
+                        <ul class="dropdown-menu">
+                           <li><a class="dropdown-item" href="">Property</a></li>
+                           <li><a class="dropdown-item" href="">Hotel</a></li>
+                           <li><a class="dropdown-item"
+                                 href="">Service Appartment</a></li>
+                           <li><a class="dropdown-item" href="">Taxi</a></li>
+                           <li><a class="dropdown-item" href="">Dispatch
+                                 Rider</a></li>
+                           <li><a class="dropdown-item" href="">Luxury Ride</a></li>
+                           <li><a class="dropdown-item" href="">Tour Bus</a></li>
+                           <li><a class="dropdown-item" href="">Personal
+                                 Shopper</a></li>
+                        </ul>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="">For Business</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="./contact_us.html">Contact Us</a>
+                     </li>
+                     <li class="d-none nav-item">
+                        <div class="dropdown">
+                           <a class="dropdown-toggle common-btn text-white d-flex justify-content-center align-items-center"
+                              style="padding: 0.7em 1em" href="#" role="button" data-bs-toggle="dropdown"
+                              aria-expanded="false">
+                              <img src="./assets/images/user_blog.png" alt="" class="me-2" />
+                              onhousing
+                              <iconify-icon icon="ep:arrow-down" class="ms-2"></iconify-icon>
+                           </a>
+
+                           <ul class="dropdown-menu">
+                              <li class="border-bottom">
+                                 <a class="dropdown-item" href="#"><iconify-icon icon="mdi:user-outline"
+                                       style="color: #159bf0; font-size: 1.2em" class="me-3"></iconify-icon>My
+                                    Profile</a>
+                              </li>
+                              <li class="border-bottom">
+                                 <a class="dropdown-item" href="#"><iconify-icon icon="mdi:user-outline"
+                                       style="color: #159bf0; font-size: 1.2em" class="me-3"></iconify-icon>number of
+                                    inquiry</a>
+                              </li>
+                              <li class="border-bottom">
+                                 <a class="dropdown-item" href="#"><iconify-icon icon="mdi:user-outline"
+                                       style="color: #159bf0; font-size: 1.2em" class="me-3"></iconify-icon>Booking</a>
+                              </li>
+                              <li class="border-bottom">
+                                 <a class="dropdown-item" href="#"><iconify-icon icon="mdi:user-outline"
+                                       style="color: #159bf0; font-size: 1.2em" class="me-3"></iconify-icon>All
+                                    Services</a>
+                              </li>
+                              <li class="border-bottom">
+                                 <a class="dropdown-item" href="#"><iconify-icon icon="mdi:user-outline"
+                                       style="color: #159bf0; font-size: 1.2em" class="me-3"></iconify-icon>For
+                                    Business</a>
+                              </li>
+                              <li class="border-bottom">
+                                 <a class="dropdown-item" href="#"><iconify-icon icon="mdi:user-outline"
+                                       style="color: #159bf0; font-size: 1.2em" class="me-3"></iconify-icon>Save for
+                                    later</a>
+                              </li>
+                              <li class="border-bottom" data-bs-target="#exampleModalToggle6" data-bs-toggle="modal">
+                                 <a class="dropdown-item" href="#"><iconify-icon icon="mdi:user-outline"
+                                       style="color: #159bf0; font-size: 1.2em" class="me-3"></iconify-icon>Change
+                                    Password</a>
+                              </li>
+
+                           </ul>
+                        </div>
+                     </li>
+                  </ul>
+
+                  <form class="d-flex" role="search">
+                     <a class="text-primary btn btn-outline-primary me-2 login-btn" data-bs-toggle="modal"
+                        href="#exampleModalToggle" role="button">Login
+                        <iconify-icon icon="material-symbols:download-sharp" class="ms-2 d-none"></iconify-icon>
+                     </a>
+                     <a href="#"
+                        class="btn btn-primary d-flex justify-content-center align-items-center text-white">Download
+                        App
+                        <iconify-icon icon="material-symbols:download-sharp" class="ms-2 fs-4"></iconify-icon>
+                     </a>
+                     <!-- <a class="d-flex text-dark py-2 px-4" href="#">
+                        <iconify-icon icon="fa:power-off" style="color: #159bf0; font-size: 1.1em"
+                           class="me-3 mt-1"></iconify-icon>
+                        <p>Log Out</p> -->
+                     </a>
+                  </form>
+               </div>
+            </div>
+         </nav>
+      </div>
+   </header>
+   <!-- navigation section  -->
+
+   <!-- banner section  -->
+   <section class="banner-sec py-4 py-lg-5">
+      <div class="container">
+         <div class="banner-box border border-white rounded-4 p-3 p-lg-4">
+            <form action="">
+               <div class="row g-2">
+                  <div class="col col-sm-12 col-md-6 col-lg-5">
+                     <div class="mb-3">
+                        <label for="searchLocation" class="form-label text-capitalize fw-500">destination Name</label>
+                        <div class="position-relative">
+                           <input type="search" class="form-control p-2 border border-primary" id="searchLocation"
+                           placeholder="City, region, district or specific hotel">
+                           <div class="near-me-box">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" class="me-1">
+                                 <path fill="currentColor" d="M11 22.95v-2q-3.125-.35-5.363-2.587T3.05 13h-2v-2h2q.35-3.125 2.588-5.363T11 3.05v-2h2v2q3.125.35 5.363 2.588T20.95 11h2v2h-2q-.35 3.125-2.587 5.363T13 20.95v2zM12 19q2.9 0 4.95-2.05T19 12q0-2.9-2.05-4.95T12 5Q9.1 5 7.05 7.05T5 12q0 2.9 2.05 4.95T12 19m0-3q-1.65 0-2.825-1.175T8 12q0-1.65 1.175-2.825T12 8q1.65 0 2.825 1.175T16 12q0 1.65-1.175 2.825T12 16" />
+                              </svg>
+                              Near me
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col col-sm-12 col-md-6 col-lg-4">
+                     <div class="time-wrap d-flex">
+                        <div class="mb-3 me-2">
+                           <label for="" class="form-label text-capitalize fw-500">Check-in </label>
+                           <input type="date" class="form-control p-2 border border-primary" id=""
+                              placeholder="City, region, district or specific hotel">
+                        </div>
+                        <div class="mb-3">
+                           <label for="" class="form-label text-capitalize fw-500">Check-out</label>
+                           <input type="date" class="form-control p-2 border border-primary" id=""
+                              placeholder="City, region, district or specific hotel">
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col col-sm-12 col-md-12 col-lg-3">
+                     <div class="user-rooms d-flex">
+                        <div class="mb-3">
+                           <label for="" class="form-label text-capitalize fw-500">Rooms</label>
+                           <div
+                              class="user-count-select bg-white d-flex justify-content-between align-items-center border border-primary p-2 rounded-2">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                 <path fill="currentColor" d="M18 11H6a2 2 0 0 0 0 4h12a2 2 0 0 0 0-4" />
+                              </svg>
+                              <input type="text" class="form-control border-0 mx-1 px-1 py-0 text-center" id=""
+                                 value="2">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                 <path fill="currentColor"
+                                    d="M18 10h-4V6a2 2 0 0 0-4 0l.071 4H6a2 2 0 0 0 0 4l4.071-.071L10 18a2 2 0 0 0 4 0v-4.071L18 14a2 2 0 0 0 0-4" />
+                              </svg>
+                           </div>
+                        </div>
+                        <div class="mb-3 mx-2">
+                           <label for="" class="form-label text-capitalize fw-500">Adults</label>
+                           <div
+                              class="user-count-select bg-white d-flex justify-content-between align-items-center border border-primary p-2 rounded-2">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                 <path fill="currentColor" d="M18 11H6a2 2 0 0 0 0 4h12a2 2 0 0 0 0-4" />
+                              </svg>
+                              <input type="text" class="form-control border-0 mx-1 px-1 py-0 text-center" id=""
+                                 value="2">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                 <path fill="currentColor"
+                                    d="M18 10h-4V6a2 2 0 0 0-4 0l.071 4H6a2 2 0 0 0 0 4l4.071-.071L10 18a2 2 0 0 0 4 0v-4.071L18 14a2 2 0 0 0 0-4" />
+                              </svg>
+                           </div>
+                        </div>
+                        <div class="mb-3">
+                           <label for="" class="form-label text-capitalize fw-500">Children</label>
+                           <div
+                              class="user-count-select bg-white d-flex justify-content-between align-items-center border border-primary p-2 rounded-2">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                 <path fill="currentColor" d="M18 11H6a2 2 0 0 0 0 4h12a2 2 0 0 0 0-4" />
+                              </svg>
+                              <input type="text" class="form-control border-0 mx-1 px-1 py-0 text-center" id=""
+                                 value="2">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                 <path fill="currentColor"
+                                    d="M18 10h-4V6a2 2 0 0 0-4 0l.071 4H6a2 2 0 0 0 0 4l4.071-.071L10 18a2 2 0 0 0 4 0v-4.071L18 14a2 2 0 0 0 0-4" />
+                              </svg>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="btn-search-box position-relative mt-2">
+                     <button class="btn btn-primary border border-white px-4 px-lg-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="fs-5" width="1em" height="1em"
+                           viewBox="0 0 56 56">
+                           <path fill="currentColor"
+                              d="M23.957 41.77a18.02 18.02 0 0 0 10.477-3.376l11.109 11.11a2.658 2.658 0 0 0 1.898.773c1.524 0 2.625-1.172 2.625-2.672c0-.703-.234-1.359-.75-1.874L38.277 34.668c2.32-3.047 3.703-6.82 3.703-10.922c0-9.914-8.109-18.023-18.023-18.023c-9.937 0-18.023 8.109-18.023 18.023S14.02 41.77 23.957 41.77m0-3.891c-7.758 0-14.133-6.398-14.133-14.133c0-7.734 6.375-14.133 14.133-14.133c7.734 0 14.133 6.399 14.133 14.133c0 7.735-6.399 14.133-14.133 14.133" />
+                        </svg>
+                        <span class="ps-2 fs-5 text-capitalize fw-500s">search</span>
+                     </button>
+                  </div>
+               </div>
+            </form>
+         </div>
+
+         <!-- banner cards section  -->
+         <div class="offers-sec py-3 bg-white rounded-4 p-3 p-lg-4">
+            <div class="container">
+               <div class="col-12">
+                  <div class="d-flex justify-content-between align-items-center offers-heading">
+                     <h3 class="common-heading">
+                        offers
+                     </h3>
+                     <a href="" class="btn btn-outline-primary">View All</a>
+                  </div>
+               </div>
+               <div class="owl-carousel owl-theme" id="offers-carousel">
+                  <div class="offers-item d-flex">
+                     <div class="left-img">
+                        <img src="./assets/images/offer-1.png" class="card-img-top h-100 object-fit-cover" alt="..." />
+                     </div>
+                     <div class="card-body py-2 px-3">
+                        <h4 class="card-title mb-0 fs-6">
+                           Book Niraamaya Wellness Retreat @ FLAT 20% OFF*
+                        </h4>
+                        <p class="card-text pb-2">
+                           on Stays + ₹2,000 Wellness Credit
+                        </p>
+                        <div class="text-capitalize d-flex justify-content-between align-items-center terms-book">
+                           <a href="" class="text-secondary">T&C's Apply</a>
+                           <a href="./property_search_details.html" class="text-primary">book now </a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="offers-item d-flex">
+                     <div class="left-img">
+                        <img src="./assets/images/offer-2.png" class="card-img-top h-100 object-fit-cover" alt="..." />
+                     </div>
+                     <div class="card-body py-2 px-3">
+                        <h4 class="card-title mb-0 fs-6">
+                           Book Niraamaya Wellness Retreat @ FLAT 20% OFF*
+                        </h4>
+                        <p class="card-text pb-2">
+                           on Stays + ₹2,000 Wellness Credit
+                        </p>
+                        <div class="text-capitalize d-flex justify-content-between align-items-center terms-book">
+                           <a href="" class="text-secondary">T&C's Apply</a>
+                           <a href="./property_search_details.html" class="text-primary">book now </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- banner cards section  -->
+      </div>
+   </section>
+   <!-- banner section  -->
+
+   <!-- about property  -->
+   <section class="about-sec py-5">
+      <div class="container">
+         <h2 class="section-title text-capitalize text-center">
+            Explore <span class="text-primary"> Regions </span>
+         </h2>
+         <div class="dots-header d-flex align-items-center justify-content-center my-3">
+            <span class="line"></span>
+            <span class="round-glop"></span>
+            <span class="line"></span>
+         </div>
+         <p class="cmn-header-text text-center">
+            Semper ac dolor vitae accumsan. Cras interdum hendrerit lacinia. Phasellus accumsan urna vitae molestie
+            interdum. Nam sed placerat libero, non eleifend dolor.
+         </p>
+         <div class="row py-3 mt-3">
+            <div class="col-12">
+               <div class="property-carousel">
+                  <div class="owl-carousel owl-theme" id="property-carousel">
+                     <div class="property-card border-bottom border-secondary">
+                        <img src="./assets/images/hotel-1.png" class="card-img-top" alt="..." />
+                        <div class="card-body py-3 px-0">
+                           <div class="d-flex justify-content-between w-100">
+                              <span>
+                                 <h6 class="card-title mb-0">Bishnupur</h6>
+                                 <p class="blog_text_text"><span class="text-primary">₹1250/</span> Per Head</p>
+   
+                              </span>
+                              <a href="./property_search_details.html" class="btn btn-outline-primary text-primary">book
+                                 now</a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="property-card border-bottom border-secondary">
+                        <img src="./assets/images/hotel-2.png" class="card-img-top" alt="..." />
+                        <div class="card-body py-3 px-0">
+                           <div class="d-flex justify-content-between w-100">
+                              <span>
+                                 <h6 class="card-title mb-0">Mousuni Island</h6>
+                                 <p class="blog_text_text"><span class="text-primary">₹1250/</span> Per Head</p>
+   
+                              </span>
+                              <a href="./property_search_details.html" class="btn btn-outline-primary text-primary">book
+                                 now</a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="property-card border-bottom border-secondary">
+                        <img src="./assets/images/hotel-3.png" class="card-img-top" alt="..." />
+                        <div class="card-body py-3 px-0">
+                           <div class="d-flex justify-content-between w-100">
+                              <span>
+                                 <h6 class="card-title mb-0">Jhargram</h6>
+                                 <p class="blog_text_text"><span class="text-primary">₹1250/</span> Per Head</p>
+   
+                              </span>
+                              <a href="./property_search_details.html" class="btn btn-outline-primary text-primary">book
+                                 now</a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="property-card border-bottom border-secondary">
+                        <img src="./assets/images/hotel-4.png" class="card-img-top" alt="..." />
+                        <div class="card-body py-3 px-0">
+                           <div class="d-flex justify-content-between w-100">
+                              <span>
+                                 <h6 class="card-title mb-0">Joypur Jungle</h6>
+                                 <p class="blog_text_text"><span class="text-primary">₹1250/</span> Per Head</p>
+   
+                              </span>
+                              <a href="./property_search_details.html" class="btn btn-outline-primary text-primary">book
+                                 now</a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="property-card border-bottom border-secondary">
+                        <img src="./assets/images/hotel-4.png" class="card-img-top" alt="..." />
+                        <div class="card-body py-3 px-0">
+                           <div class="d-flex justify-content-between w-100">
+                              <span>
+                                 <h6 class="card-title mb-0">Joypur Jungle</h6>
+                                 <p class="blog_text_text"><span class="text-primary">₹1250/</span> Per Head</p>
+   
+                              </span>
+                              <a href="./property_search_details.html" class="btn btn-outline-primary text-primary">book
+                                 now</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- <div class="col-12 col-lg-12 col-xl-3">
+               <div class="qr-wrap">
+                  <img src="./assets/images/qr.jpg" alt="">
+               </div>
+            </div> -->
+         </div>
+      </div>
+   </section>
+   <!-- about property  -->
+
+   <!-- why choose us  -->
+   <section class="why-book-sec">
+      <div class="container">
+         <h2 class="text-center mb-3 mb-lg-4">Why Book Hotels with <span class="text-primary"> BookingRoute? </span></h2>
+         <div class="row">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3 text-center mb-3 mb-xl-0">
+               <div class="why-book-item h-100">
+               <div class="whybk_img">
+                  <img src="https://www.easemytrip.com/hotels/content/img/homes/hotel-icn.svg">
+               </div>
+               <div class="h_txt">
+                  Extensive Hotel
+                  Options
+               </div>
+               <div class="p_txt">
+                  Best hotels
+                  available for
+                  different
+                  destinations to
+                  offer you the
+                  stay of a
+                  lifetime.
+               </div>
+               </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3 text-center mb-3 mb-xl-0">
+               <div class="why-book-item h-100">
+               <div class="whybk_img">
+                  <img src="https://www.easemytrip.com/hotels/content/img/homes/wallet-icn.svg">
+               </div>
+               <div class="h_txt">
+                  Savings on
+                  Hotel
+                  Booking
+               </div>
+               <div class="p_txt">
+                  Enjoy hotel
+                  bookings
+                  with the
+                  best offers
+                  and
+                  discounts
+                  and make
+                  your stay
+                  unforgettable.
+               </div>
+            </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3 text-center mb-3 mb-xl-0">
+               <div class="why-book-item h-100">
+               <div class="whybk_img">
+                  <img src="https://www.easemytrip.com/hotels/content/img/homes/rating-icn.svg">
+               </div>
+               <div class="h_txt">
+                  Hotel
+                  Ratings
+               </div>
+               <div class="p_txt">
+                  All our
+                  hotels
+                  have
+                  good
+                  ratings
+                  on Trip
+                  Advisor
+                  and are
+                  recommended
+                  by
+                  users.
+               </div>
+            </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3 text-center mb-3 mb-xl-0">
+               <div class="why-book-item h-100">
+               <div class="whybk_img">
+                  <img src="https://www.easemytrip.com/hotels/content/img/homes/beach-icn.svg">
+               </div>
+               <div class="h_txt">
+                  Best
+                  Price
+               </div>
+               <div class="p_txt">
+                  Get
+                  excellent
+                  hotels/resorts
+                  at
+                  the
+                  best
+                  prices
+                  to
+                  pamper
+                  your
+                  desires.
+               </div>
+            </div>
+         </div>
+
+         </div>
+      </div>
+   </section>
+   <!-- Popular Destinations property  -->
+   <section class="popular-destination-sec pb-5">
+      <div class="container">
+         <h2 class="section-title text-capitalize text-center">
+            Popular <span class="text-primary">Destinations</span>
+         </h2>
+         <div class="dots-header d-flex align-items-center justify-content-center my-3">
+            <span class="line"></span>
+            <span class="round-glop"></span>
+            <span class="line"></span>
+         </div>
+         <p class="cmn-header-text text-center">
+            Semper ac dolor vitae accumsan. Cras interdum hendrerit lacinia. Phasellus accumsan urna vitae molestie
+            interdum. Nam sed placerat libero, non eleifend dolor.
+         </p>
+         <div class="row py-3 mt-3">
+            <!-- <div class="owl-carousel owl-theme" id="popular-destination"> -->
+
+            <div class="col-12 col-sm-12 col-lg-3 mb-3">
+               <div class="shadow popular-item">
+                  <img src="./assets/images/hotel-1.png" class="card-img-top" alt="..." />
+                  <div class="card-body py-3 px-2">
+                     <span>
+                        <h6 class="card-title mb-2 fs-5 fw-500">Digha</h6>
+                        <p class="blog-text">Techonolgy hub of India</p>
+
+                     </span>
+                  </div>
+               </div>
+            </div>
+            <div class="col-12 col-sm-12 col-lg-3 mb-3">
+               <div class="shadow popular-item">
+                  <img src="./assets/images/hotel-2.png" class="card-img-top" alt="..." />
+                  <div class="card-body py-3 px-2">
+                     <span>
+                        <h6 class="card-title mb-2 fs-5 fw-500">Lamahatta</h6>
+                        <p class="blog-text">Techonolgy hub of India</p>
+
+                     </span>
+                  </div>
+               </div>
+            </div>
+            <div class="col-12 col-sm-12 col-lg-3 mb-3">
+               <div class="shadow popular-item">
+                  <img src="./assets/images/hotel-3.png" class="card-img-top" alt="..." />
+                  <div class="card-body py-3 px-2">
+                     <span>
+                        <h6 class="card-title mb-2 fs-5 fw-500">Mukutmanipur</h6>
+                        <p class="blog-text">Techonolgy hub of India</p>
+
+                     </span>
+                  </div>
+               </div>
+            </div>
+            <div class="col-12 col-sm-12 col-lg-3 mb-3">
+               <div class="shadow popular-item">
+                  <img src="./assets/images/hotel-4.png" class="card-img-top" alt="..." />
+                  <div class="card-body py-3 px-2">
+                     <span>
+                        <h6 class="card-title mb-2 fs-5 fw-500">Rongo</h6>
+                        <p class="blog-text">Techonolgy hub of India</p>
+
+                     </span>
+                  </div>
+               </div>
+            </div>
+            <div class="col-12 col-sm-12 col-lg-3 mb-3">
+               <div class="shadow popular-item">
+                  <img src="./assets/images/hotel-2.png" class="card-img-top" alt="..." />
+                  <div class="card-body py-3 px-2">
+                     <span>
+                        <h6 class="card-title mb-2 fs-5 fw-500">Taki</h6>
+                        <p class="blog-text">Techonolgy hub of India</p>
+
+                     </span>
+                  </div>
+               </div>
+            </div>
+            <div class="col-12 col-sm-12 col-lg-3 mb-3">
+               <div class="shadow popular-item">
+                  <img src="./assets/images/hotel-2.png" class="card-img-top" alt="..." />
+                  <div class="card-body py-3 px-2">
+                     <span>
+                        <h6 class="card-title mb-2 fs-5 fw-500">Dooars </h6>
+                        <p class="blog-text">Techonolgy hub of India</p>
+
+                     </span>
+                  </div>
+               </div>
+            </div>
+            <div class="col-12 col-sm-12 col-lg-3 mb-3">
+               <div class="shadow popular-item">
+                  <img src="./assets/images/hotel-2.png" class="card-img-top" alt="..." />
+                  <div class="card-body py-3 px-2">
+                     <span>
+                        <h6 class="card-title mb-2 fs-5 fw-500">Ooty</h6>
+                        <p class="blog-text">Techonolgy hub of India</p>
+
+                     </span>
+                  </div>
+               </div>
+            </div>
+            <div class="col-12 col-sm-12 col-lg-3 mb-3">
+               <div class="shadow popular-item">
+                  <img src="./assets/images/hotel-2.png" class="card-img-top" alt="..." />
+                  <div class="card-body py-3 px-2">
+                     <span>
+                        <h6 class="card-title mb-2 fs-5 fw-500">Ooty</h6>
+                        <p class="blog-text">Techonolgy hub of India</p>
+
+                     </span>
+                  </div>
+               </div>
+            </div>
+
+
+            <!-- </div> -->
+         </div>
+      </div>
+   </section>
+   <!-- Popular Destinations  -->
+
+   <!-- Quick and easy trip planner  -->
+   <section class="trip-planner-sec py-5" id="collage">
+      <div class="container">
+         <h2 class="common-heading text-capitalize text-center text-black">
+            Quick and easy <span class="text-primary"> trip planner </span>
+         </h2>
+         <p class="text-center mt-3 mb-2">Pick a vibe and explore the top destinations in India</p>
+         <div class="row mt-3 mt-lg-4">
+            <div>
+               <ul class="nav nav-pills mb-3 justify-content-center trip-planner-item" id="pills-tab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                     <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                        aria-selected="true">Hills
+                     </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                     <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                        aria-selected="false">River</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                     <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+                        aria-selected="false">Sea</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                     <button class="nav-link" id="pills-tabs-4" data-bs-toggle="pill" data-bs-target="#pills-4"
+                        type="button" role="tab" aria-controls="pills-4" aria-selected="false">Forest</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                     <button class="nav-link" id="pills-tabs-4" data-bs-toggle="pill" data-bs-target="#pills-4"
+                        type="button" role="tab" aria-controls="pills-4" aria-selected="false">Valley</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                     <button class="nav-link" id="pills-tabs-4" data-bs-toggle="pill" data-bs-target="#pills-4"
+                        type="button" role="tab" aria-controls="pills-4" aria-selected="false">Wild Life</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                     <button class="nav-link" id="pills-tabs-4" data-bs-toggle="pill" data-bs-target="#pills-4"
+                        type="button" role="tab" aria-controls="pills-4" aria-selected="false">Country</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                     <button class="nav-link" id="pills-tabs-4" data-bs-toggle="pill" data-bs-target="#pills-4"
+                        type="button" role="tab" aria-controls="pills-4" aria-selected="false">Tea Estate</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                     <button class="nav-link" id="pills-tabs-4" data-bs-toggle="pill" data-bs-target="#pills-4"
+                        type="button" role="tab" aria-controls="pills-4" aria-selected="false">Couple Friendly Weekends</button>
+                  </li>
+               </ul>
+               <div class="tab-content" id="pills-tabContent">
+                  <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                     aria-labelledby="pills-home-tab">
+                     <div class="row">
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+                           <div class="popular-item bg-white h-100 rounded-3">
+                              <div class="popular-item">
+                                 <img src="./assets/images/t-1.jpg" class="card-img-top" alt="..." />
+                                 <div class="card-body py-3 px-2">
+                                    <span>
+                                       <h6 class="card-title mb-2 fs-5 fw-500">Digha</h6>
+                                       <p class="blog-text">127 km away</p>
+
+                                    </span>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+                           <div class="popular-item bg-white h-100 rounded-3">
+                              <div class="popular-item">
+                                 <img src="./assets/images/hotel-1.png" class="card-img-top" alt="..." />
+                                 <div class="card-body py-3 px-2">
+                                    <span>
+                                       <h6 class="card-title mb-2 fs-5 fw-500">Puri</h6>
+                                       <p class="blog-text">407 km away</p>
+
+                                    </span>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+                           <div class="popular-item bg-white h-100 rounded-3">
+                              <div class="popular-item">
+                                 <img src="./assets/images/t-2.jpg" class="card-img-top" alt="..." />
+                                 <div class="card-body py-3 px-2">
+                                    <span>
+                                       <h6 class="card-title mb-2 fs-5 fw-500">Visakhapatnam</h6>
+                                       <p class="blog-text">752 km away</p>
+
+                                    </span>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-3 mb-3">
+                           <div class="popular-item bg-white h-100 rounded-3">
+                              <div class="popular-item">
+                                 <img src="./assets/images/hotel-1.png" class="card-img-top" alt="..." />
+                                 <div class="card-body py-3 px-2">
+                                    <span>
+                                       <h6 class="card-title mb-2 fs-5 fw-500">Havelock Island</h6>
+                                       <p class="blog-text">1277 km away</p>
+
+                                    </span>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                     <div class="row">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-3">
+                           <div class="shadow popular-item bg-white h-100 rounded-3">
+                              <div class="card-body p-3">
+                                 <span>
+                                    <h6 class="card-title mb-2 fs-5 fw-500">Medical</h6>
+                                    <p class="blog-text">Become a healthcare specialist. Find colleges offering a
+                                       fulfilling career path in the medical sector.
+
+                                    </p>
+                                 </span>
+                                 <ul class="list-inline mt-3 programs-item">
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">BCA</a>
+                                    </li>
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">BBA/BBM</a>
+                                    </li>
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">B.Sc (Nursing)</a>
+                                    </li>
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">Test</a>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-3">
+                           <div class="shadow popular-item bg-white h-100 rounded-3">
+                              <div class="card-body p-3">
+                                 <span>
+                                    <h6 class="card-title mb-2 fs-5 fw-500">Management</h6>
+                                    <p class="blog-text">Become the industry leader in business. Develop the skills
+                                       needed to manage organizations and drive success.
+
+                                    </p>
+                                 </span>
+                                 <ul class="list-inline mt-3 programs-item">
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">BCA</a>
+                                    </li>
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">BBA/BBM</a>
+                                    </li>
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">B.Sc (Nursing)</a>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-3">
+                           <div class="shadow popular-item bg-white h-100 rounded-3">
+                              <div class="card-body p-3">
+                                 <span>
+                                    <h6 class="card-title mb-2 fs-5 fw-500">Technical</h6>
+                                    <p class="blog-text">Build the future with technology. Learn the skills needed to
+                                       design, develop, and innovate in the tech industry.
+                                    </p>
+                                 </span>
+                                 <ul class="list-inline mt-3 programs-item">
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">BCA</a>
+                                    </li>
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">BBA/BBM</a>
+                                    </li>
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">B.Sc (Nursing)</a>
+                                    </li>
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">BCA</a>
+                                    </li>
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">BBA/BBM</a>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-3">
+                           <div class="shadow popular-item bg-white h-100 rounded-3">
+                              <div class="card-body p-3">
+                                 <span>
+                                    <h6 class="card-title mb-2 fs-5 fw-500">Others</h6>
+                                    <p class="blog-text">Don't see your field listed? Explore your passions! This
+                                       category has a variety of options for diverse interests.
+                                    </p>
+                                 </span>
+                                 <ul class="list-inline mt-3 programs-item">
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">BCA</a>
+                                    </li>
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">BBA/BBM</a>
+                                    </li>
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">B.Sc</a>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+
+                     </div>
+                  </div>
+                  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                     <div class="row">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-3">
+                           <div class="shadow popular-item bg-white h-100 rounded-3">
+                              <div class="card-body p-3">
+                                 <span>
+                                    <h6 class="card-title mb-2 fs-5 fw-500">Medical</h6>
+                                    <p class="blog-text">Become a healthcare specialist. Find colleges offering a
+                                       fulfilling career path in the medical sector.
+
+                                    </p>
+                                 </span>
+                                 <ul class="list-inline mt-3 programs-item">
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">BCA</a>
+                                    </li>
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">BBA/BBM</a>
+                                    </li>
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">B.Sc (Nursing)</a>
+                                    </li>
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">Test</a>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-3">
+                           <div class="shadow popular-item bg-white h-100 rounded-3">
+                              <div class="card-body p-3">
+                                 <span>
+                                    <h6 class="card-title mb-2 fs-5 fw-500">Management</h6>
+                                    <p class="blog-text">Become the industry leader in business. Develop the skills
+                                       needed to manage organizations and drive success.
+
+                                    </p>
+                                 </span>
+                                 <ul class="list-inline mt-3 programs-item">
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">BCA</a>
+                                    </li>
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">BBA/BBM</a>
+                                    </li>
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">B.Sc (Nursing)</a>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-3">
+                           <div class="shadow popular-item bg-white h-100 rounded-3">
+                              <div class="card-body p-3">
+                                 <span>
+                                    <h6 class="card-title mb-2 fs-5 fw-500">Technical</h6>
+                                    <p class="blog-text">Build the future with technology. Learn the skills needed to
+                                       design, develop, and innovate in the tech industry.
+                                    </p>
+                                 </span>
+                                 <ul class="list-inline mt-3 programs-item">
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">BCA</a>
+                                    </li>
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">BBA/BBM</a>
+                                    </li>
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">B.Sc (Nursing)</a>
+                                    </li>
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">BCA</a>
+                                    </li>
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">BBA/BBM</a>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-3">
+                           <div class="shadow popular-item bg-white h-100 rounded-3">
+                              <div class="card-body p-3">
+                                 <span>
+                                    <h6 class="card-title mb-2 fs-5 fw-500">Others</h6>
+                                    <p class="blog-text">Don't see your field listed? Explore your passions! This
+                                       category has a variety of options for diverse interests.
+                                    </p>
+                                 </span>
+                                 <ul class="list-inline mt-3 programs-item">
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">BCA</a>
+                                    </li>
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">BBA/BBM</a>
+                                    </li>
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">B.Sc</a>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+
+                     </div>
+                  </div>
+                  <div class="tab-pane fade" id="pills-4" role="tabpanel" aria-labelledby="pills-tabs-4">
+                     <div class="row">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-3">
+                           <div class="shadow popular-item bg-white h-100 rounded-3">
+                              <div class="card-body p-3">
+                                 <span>
+                                    <h6 class="card-title mb-2 fs-5 fw-500">Medical</h6>
+                                    <p class="blog-text">Become a healthcare specialist. Find colleges offering a
+                                       fulfilling career path in the medical sector.
+
+                                    </p>
+                                 </span>
+                                 <ul class="list-inline mt-3 programs-item">
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">BCA</a>
+                                    </li>
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">BBA/BBM</a>
+                                    </li>
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">B.Sc (Nursing)</a>
+                                    </li>
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">Test</a>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-3">
+                           <div class="shadow popular-item bg-white h-100 rounded-3">
+                              <div class="card-body p-3">
+                                 <span>
+                                    <h6 class="card-title mb-2 fs-5 fw-500">Management</h6>
+                                    <p class="blog-text">Become the industry leader in business. Develop the skills
+                                       needed to manage organizations and drive success.
+
+                                    </p>
+                                 </span>
+                                 <ul class="list-inline mt-3 programs-item">
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">BCA</a>
+                                    </li>
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">BBA/BBM</a>
+                                    </li>
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">B.Sc (Nursing)</a>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-3">
+                           <div class="shadow popular-item bg-white h-100 rounded-3">
+                              <div class="card-body p-3">
+                                 <span>
+                                    <h6 class="card-title mb-2 fs-5 fw-500">Technical</h6>
+                                    <p class="blog-text">Build the future with technology. Learn the skills needed to
+                                       design, develop, and innovate in the tech industry.
+                                    </p>
+                                 </span>
+                                 <ul class="list-inline mt-3 programs-item">
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">BCA</a>
+                                    </li>
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">BBA/BBM</a>
+                                    </li>
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">B.Sc (Nursing)</a>
+                                    </li>
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">BCA</a>
+                                    </li>
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">BBA/BBM</a>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-3">
+                           <div class="shadow popular-item bg-white h-100 rounded-3">
+                              <div class="card-body p-3">
+                                 <span>
+                                    <h6 class="card-title mb-2 fs-5 fw-500">Others</h6>
+                                    <p class="blog-text">Don't see your field listed? Explore your passions! This
+                                       category has a variety of options for diverse interests.
+                                    </p>
+                                 </span>
+                                 <ul class="list-inline mt-3 programs-item">
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">BCA</a>
+                                    </li>
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">BBA/BBM</a>
+                                    </li>
+                                    <li class="list-inline-item py-2 px-3 mb-2 border border-secondary rounded-5">
+                                       <a href="" class="text-sm">B.Sc</a>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- Quick and easy trip planner  -->
+   <!-- blog section  -->
+   <!-- <section class="latest-blog-sec py-5 bg-primary">
+      <div class="container">
+         <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center offers-heading mb-3">
+               <h3 class="common-heading text-white">
+                  Blogs
+               </h3>
+               <a href="" class="text-white fs-4">View All</a>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-3 mb-xl-0">
+               <div class="blog-cards">
+                  <img src="./assets/images/blog-1.png" class="card-img-top" alt="..." />
+                  <div class="card-body p-3 d-flex flex-wrap flex-column gap-2">
+                     <div class="d-flex user_details_blog align-items-center">
+                        <span class="py-2 px-3 border border-primary bg-white">
+                           <p class="text-primary fw-bold lh-1 fs-5">
+                              02
+                           </p>
+                           <p class="publish-month">Feb</p>
+                        </span>
+                     </div>
+                     <h5 class="card-title fw-500 section-card-title medium-font-size">
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry.
+                     </h5>
+                     <p class="card-text small-font-size">
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the industry's
+                        standard dummy text ever since the 1500s, when an unknown
+                        printer took a galley of type and scrambled it to make a type
+                        specimen book....
+                     </p>
+                     <a href="./blog_details.html" class="readMore-btn fw-500 text-primary">Read More</a>
+                  </div>
+               </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-3 mb-xl-0">
+               <div class="blog-cards">
+                  <img src="./assets/images/blog-1.png" class="card-img-top" alt="..." />
+                  <div class="card-body p-3 d-flex flex-wrap flex-column gap-2">
+                     <div class="d-flex user_details_blog align-items-center">
+                        <span class="py-2 px-3 border border-primary bg-white">
+                           <p class="text-primary fw-bold lh-1 fs-5">
+                              02
+                           </p>
+                           <p class="publish-month">Feb</p>
+                        </span>
+                     </div>
+                     <h5 class="card-title fw-500 section-card-title medium-font-size">
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry.
+                     </h5>
+                     <p class="card-text small-font-size">
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the industry's
+                        standard dummy text ever since the 1500s, when an unknown
+                        printer took a galley of type and scrambled it to make a type
+                        specimen book....
+                     </p>
+                     <a href="./blog_details.html" class="readMore-btn fw-500 text-primary">Read More</a>
+                  </div>
+               </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-3 mb-xl-0">
+               <div class="blog-cards">
+                  <img src="./assets/images/blog-1.png" class="card-img-top" alt="..." />
+                  <div class="card-body p-3 d-flex flex-wrap flex-column gap-2">
+                     <div class="d-flex user_details_blog align-items-center">
+                        <span class="py-2 px-3 border border-primary bg-white">
+                           <p class="text-primary fw-bold lh-1 fs-5">
+                              02
+                           </p>
+                           <p class="publish-month">Feb</p>
+                        </span>
+                     </div>
+                     <h5 class="card-title fw-500 section-card-title medium-font-size">
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry.
+                     </h5>
+                     <p class="card-text small-font-size">
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the industry's
+                        standard dummy text ever since the 1500s, when an unknown
+                        printer took a galley of type and scrambled it to make a type
+                        specimen book....
+                     </p>
+                     <a href="./blog_details.html" class="readMore-btn fw-500 text-primary">Read More</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section> -->
+   <!-- blog section  -->
+
+   <!-- download app section  -->
+   <section class="download-app-sec py-5">
+      <div class="container">
+         <div class="downloadApp-content p-3 p-md-4 p-lg-5">
+            <div class="row align-items-center">
+               <div class="col-sm-12 col-md-12 col-xl-7 col-xl-7 text-start text-md-center text-xl-start">
+                  <div class="App-content">
+                     <h2 class="section-title text-white">
+                        Ready to Get Download APP
+                     </h2>
+                     <p class="text-white">
+                        Create your account and Boost your Career.
+                     </p>
+                  </div>
+               </div>
+               <div class="col-sm-12 col-md-12 col-xl-5 col-xl-5">
+                  <div
+                     class="app-images d-flex flex-column flex-sm-row justify-content-start justify-content-md-center justify-content-xl-start">
+                     <a href="#"><img src="./assets/images/gplay.png" alt="" class="py-2" /></a>
+                     <a href="#"><img src="./assets/images/app.png" alt="" /></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- download app section  -->
+
+   <!-- popular search section start -->
+   <section class="popular-sec pb-4 pb-lg-5">
+      <div class="container">
+         <div class="row">
+            <div class="col-12 col-xl-6">
+               <h2 class="fs-4 mb-2 mb-lg-3">
+                  Most popular searches
+               </h2>
+               <div class="popular-search-wrap position-relative">
+                  <ul aria-labelledby="more-popular-searches" class="list-inline popular-search-list pe-3">
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Pune</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Varanasi</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Chennai</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Singapore</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Dubai</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Puri</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Chandigarh</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Kolkata</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Gurgaon</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Lucknow</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Mahabaleshwar</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Agra</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Singapore</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Dubai</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Puri</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Varanasi</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Chennai</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Singapore</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Dubai</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Puri</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Chandigarh</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Kolkata</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Gurgaon</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Lucknow</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Mahabaleshwar</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Agra</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Singapore</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Dubai</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Puri</a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="col-12 col-xl-6">
+               <h2 class="text-capitalize fs-4 mb-2 mb-lg-3">why book with bookingRoute</h2>
+               <div class="popular-search-wrap position-relative">
+                  <div class="accordion popular-search-list" id="accordionExample">
+                     <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                           <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                              Accordion Item #1
+                           </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                           data-bs-parent="#accordionExample">
+                           <div class="accordion-body">
+                              <strong>This is the first item's accordion body.</strong> It is shown by default, until
+                              the collapse plugin adds the appropriate classes that we use to style each element. These
+                              classes control the overall appearance, as well as the showing and hiding via CSS
+                              transitions. You can modify any of this with custom CSS or overriding our default
+                              variables.
+                           </div>
+                        </div>
+                     </div>
+                     <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                              Accordion Item #2
+                           </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                           data-bs-parent="#accordionExample">
+                           <div class="accordion-body">
+                              <strong>This is the second item's accordion body.</strong> It is hidden by default, until
+                              the collapse plugin adds the appropriate classes that we use to style each element. These
+                              classes control the overall appearance, as well as the showing and hiding via CSS
+                              transitions.
+                           </div>
+                        </div>
+                     </div>
+                     <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                              Accordion Item #3
+                           </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                           data-bs-parent="#accordionExample">
+                           <div class="accordion-body">
+                              <strong>This is the third item's accordion body.</strong> It is hidden by default, until
+                              the collapse plugin adds the appropriate classes that we use to style each element. These
+                              classes control the overall appearance, as well as the showing and hiding via CSS
+                              transitions. You can modify any of this with custom CSS or overriding our default
+                              variables. It's also worth noting that just about any HTML can go within the
+                              <code>.accordion-body</code>, though the transition does limit overflow.
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- footer section  -->
+   <footer class="footer-sec py-5 text-white">
+      <div class="container">
+         <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+               <div class="footer-about d-flex flex-column gap-3 px-3">
+                  <a href="./index.html">
+                     <img src="./assets/images/Logo.png" alt="" width="180" />
+                  </a>
+                  <p class="common-text medium-font-size mb-3">
+                     Building a next-generation collaborative platform to connect
+                     renters, homeowners, and agents.
+                  </p>
+                  <form action="#" class="d-flex gap-3">
+                     <input type="email" name="footerEmail" id="footerEmail" placeholder="Email id"
+                        class="footer-input w-75" />
+                     <button class="btn btn-primary px-4 py-1">Send</button>
+                  </form>
+               </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 mt-3 mt-md-0">
+               <div class="footer-service small-font-size  px-3">
+                  <h4 class="footer-title footer-title-font">Services</h4>
+                  <ul class="list-unstyled">
+                     <div class="row">
+                        <div class="col-sm-6">
+                           <li class="py-1 py-lg-2">
+                              <a href="">Property
+                              </a>
+                           </li>
+                        </div>
+
+                        <div class="col-sm-6">
+                           <li class="py-1 py-lg-2">
+                              <a href="">Personal Shopper
+                              </a>
+                           </li>
+                        </div>
+
+                        <div class="col-sm-6">
+                           <li class="py-1 py-lg-2">
+                              <a href="">Hotel
+                              </a>
+                           </li>
+                        </div>
+
+                        <div class="col-sm-6">
+                           <li class="py-1 py-lg-2">
+                              <a href="">Luxury Rides
+                              </a>
+                           </li>
+                        </div>
+
+                        <div class="col-sm-6">
+                           <li class="py-1 py-lg-2">
+                              <a href="">Taxi
+                              </a>
+                           </li>
+                        </div>
+
+                        <div class="col-sm-6">
+                           <li class="py-1 py-lg-2">
+                              <a href="">Tour Bus
+                              </a>
+                           </li>
+                        </div>
+
+                        <div class="col-sm-6">
+                           <li class="py-1 py-lg-2">
+                              <a href="">Dispatch Rider
+                              </a>
+                           </li>
+                        </div>
+                     </div>
+                  </ul>
+               </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-2 col-xl-2 mt-md-3 mt-lg-0">
+               <div class="footer-company small-font-size px-3">
+                  <h4 class="footer-title footer-title-font">Company</h4>
+                  <ul class="list-unstyled">
+                     <li class="py-1 py-lg-2">
+                        <a href="../about_us.html">About Us
+                        </a>
+                     </li>
+                     <li class="py-1 py-lg-2">
+                        <a href="../blog_list.html">Blogs
+                        </a>
+                     </li>
+                     <li class="py-1 py-lg-2">
+                        <a href="../career.html">Careers
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-2 col-xl-2 mt-md-3 mt-lg-0">
+               <div class="footer-support small-font-size px-3">
+                  <h4 class="footer-title footer-title-font">Support</h4>
+                  <ul class="list-unstyled">
+                     <li class="py-1 py-lg-2">
+                        <a href="../contact_us.html">Contact
+                        </a>
+                     </li>
+                     <li class="py-1 py-lg-2">
+                        <a href="../privacy_policy.html">Privacy
+                        </a>
+                     </li>
+                     <li class="py-1 py-lg-2">
+                        <a href="../terms_condition.html">Terms
+                        </a>
+                     </li>
+                     <li class="py-1 py-lg-2">
+                        <a href="../faq.html">FAQ
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+   <div class="footer-bottm-sec">
+      <div class="container">
+         <!-- copyright section  -->
+         <div
+            class="footer-copyright d-flex justify-content-between py-2 py-md-3 py-lg-4 flex-column flex-sm-row align-items-center">
+            <div class="social-icon d-flex gap-2">
+               <a href="#">
+                  <div class="icon-bg btn bg-white">
+                     <iconify-icon icon="ri:facebook-fill" class="text-primary"></iconify-icon>
+                  </div>
+               </a>
+
+               <a href="#">
+                  <div class="icon-bg btn bg-white">
+                     <iconify-icon icon="ri:linkedin-fill" class="text-primary"></iconify-icon>
+                  </div>
+               </a>
+
+               <a href="#">
+                  <div class="icon-bg btn bg-white">
+                     <iconify-icon icon="mdi:twitter" class="text-primary"></iconify-icon>
+                  </div>
+               </a>
+            </div>
+            <div class="copyright-text text-white mt-2 mt-sm-0">Copyright © BookingRoute 2024</div>
+         </div>
+         <!-- copyright section  -->
+      </div>
+   </div>
+   <!-- footer section  -->
+
+   <!-- bootstrap cdn js  -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+   <!-- iconify link js  -->
+   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+   <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
