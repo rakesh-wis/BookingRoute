@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Hotel Listing Page</title>
+   <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg">
+   <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+   <!-- bootstrap cdn css  -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+   <!-- ow carousel  -->
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+      referrerpolicy="no-referrer" />
+
+   <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+   <link rel="stylesheet" href="./assets/css/style.css" />
+   <link rel="stylesheet" href="./assets/css/responsive.css">
+</head>
+
+<body>
+   <!-- navigation section  -->
+   <header class="navigation-sec">
+      <div class="container">
+         <nav class="navbar navbar-expand-lg">
+               <a class="navbar-brand" href="index.html">
+                  <img src="./assets/images/logo.png" alt="" width="170" />
+               </a>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                  aria-label="Toggle navigation">
+                  <div class="container-menu-box" onclick="myFunction(this)">
+                     <div class="bar1"></div>
+                     <div class="bar2"></div>
+                     <div class="bar3"></div>
+                  </div>
+               </button>
+               <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">                  
+                  <form class="d-flex flex-wrap gap-2 gap-xl-0 flex-xl-nowrap" role="search">
+                     <a class="btn btn-outline-secondary me-2 login-btn" data-bs-toggle="modal"
+                        href="#exampleModalToggle" role="button">List Your Property
+                        <iconify-icon icon="material-symbols:download-sharp" class="ms-2 d-none"></iconify-icon>
+                     </a>
+                     <a class="text-primary btn btn-outline-primary me-2 login-btn" data-bs-toggle="modal"
+                        href="#exampleModalToggle" role="button">Login
+                        <iconify-icon icon="material-symbols:download-sharp" class="ms-2 d-none"></iconify-icon>
+                     </a>
+                     <a href="#"
+                        class="btn p-2 btn-primary d-flex justify-content-center align-items-center text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" class="fs-5">
+                           <path fill="currentColor" d="m8.809 14.92l6.11-11.037c.084-.152.168-.302.244-.459c.069-.142.127-.285.165-.44c.08-.326.058-.666-.066-.977a1.511 1.511 0 0 0-.62-.735a1.418 1.418 0 0 0-.922-.193c-.32.043-.613.194-.844.43c-.11.11-.2.235-.283.368c-.092.146-.175.298-.259.45l-.386.697l-.387-.698c-.084-.151-.167-.303-.259-.449a2.168 2.168 0 0 0-.283-.369a1.449 1.449 0 0 0-.844-.429a1.418 1.418 0 0 0-.921.193a1.512 1.512 0 0 0-.62.735a1.586 1.586 0 0 0-.066.977c.038.155.096.298.164.44c.076.157.16.307.244.459l1.248 2.254l-4.862 8.782H2.03c-.168 0-.336 0-.503.01c-.152.009-.3.028-.448.071c-.31.09-.582.28-.778.548A1.581 1.581 0 0 0 .3 17.404c.197.268.468.457.779.548c.148.043.296.062.448.071c.167.01.335.01.503.01h13.097a1.93 1.93 0 0 0 .1-.27c.415-1.416-.616-2.844-2.035-2.844zm-5.696 3.622l-.792 1.5c-.082.156-.165.31-.239.471a2.36 2.36 0 0 0-.16.452a1.7 1.7 0 0 0 .064 1.003c.121.318.334.583.607.755c.272.172.589.242.901.197c.314-.044.6-.198.826-.44c.108-.115.196-.242.278-.378c.09-.15.171-.306.253-.462L6 19.464c-.09-.15-.947-1.47-2.887-.922m20.586-3.006a1.47 1.47 0 0 0-.779-.54a2.031 2.031 0 0 0-.448-.071c-.168-.01-.335-.01-.503-.01h-3.321L14.258 7.1a4.064 4.064 0 0 0-1.076 2.198a4.645 4.645 0 0 0 .546 3l5.274 9.393c.084.15.167.3.259.444c.084.13.174.253.283.364c.231.232.524.38.845.423c.32.042.643-.024.922-.19a1.5 1.5 0 0 0 .621-.726c.125-.307.146-.642.066-.964a2.173 2.173 0 0 0-.165-.434c-.075-.155-.16-.303-.244-.453l-1.216-2.166h1.596c.168 0 .335 0 .503-.009c.152-.009.3-.028.448-.07a1.47 1.47 0 0 0 .78-.541a1.539 1.539 0 0 0 .3-.916a1.539 1.539 0 0 0-.3-.916" />
+                        </svg>
+                     </a>
+                    <a href="" class="btn btn-secondary ms-2 p-2">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="fs-5" width="1em" height="1em" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="m14.975 3.019l.96-1.732a.193.193 0 0 0-.338-.187l-.97 1.75a6.541 6.541 0 0 0-5.253 0l-.97-1.75a.193.193 0 0 0-.34.187l.96 1.732a5.546 5.546 0 0 0-3.092 4.876h12.137a5.546 5.546 0 0 0-3.094-4.876M9.2 5.674a.507.507 0 1 1 .507-.506a.507.507 0 0 1-.507.506m5.602 0a.507.507 0 1 1 .507-.506a.507.507 0 0 1-.507.506M5.93 17.171A1.467 1.467 0 0 0 7.4 18.64h.973v3a1.36 1.36 0 1 0 2.721 0v-3h1.814v3a1.36 1.36 0 1 0 2.72 0v-3h.974a1.467 1.467 0 0 0 1.468-1.468V8.375H5.93Zm-1.867-9.03a1.362 1.362 0 0 0-1.36 1.361v5.669a1.36 1.36 0 1 0 2.72 0V9.502a1.362 1.362 0 0 0-1.36-1.36m15.872 0a1.362 1.362 0 0 0-1.36 1.361v5.669a1.36 1.36 0 1 0 2.72 0v-5.67a1.362 1.362 0 0 0-1.36-1.36" />
+                     </svg>
+                    </a>
+                  </form>
+               </div>
+         </nav>
+      </div>
+   </header>
+   <!-- navigation section  -->
+
+   <!-- banner sec  -->
+   <section class="other-banner-sec p-3 p-lg-5">
+      <div class="container">
+         <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <!-- <li class="breadcrumb-item"><a href="#">List</a></li> -->
+              <li class="breadcrumb-item active" aria-current="page">List</li>
+            </ol>
+          </nav>
+         <form action="" class="mt-3">
+            <div class="row g-2">
+               <div class="col col-sm-12 col-md-6 col-lg-5">
+                  <div class="mb-3">
+                     <label for="searchLocation" class="form-label text-capitalize fw-500">destination Name</label>
+                     <div class="position-relative">
+                        <input type="search" class="form-control p-2 border border-primary" id="searchLocation"
+                        placeholder="City, region, district or specific hotel">
+                        <div class="near-me-box">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" class="me-1">
+                              <path fill="currentColor" d="M11 22.95v-2q-3.125-.35-5.363-2.587T3.05 13h-2v-2h2q.35-3.125 2.588-5.363T11 3.05v-2h2v2q3.125.35 5.363 2.588T20.95 11h2v2h-2q-.35 3.125-2.587 5.363T13 20.95v2zM12 19q2.9 0 4.95-2.05T19 12q0-2.9-2.05-4.95T12 5Q9.1 5 7.05 7.05T5 12q0 2.9 2.05 4.95T12 19m0-3q-1.65 0-2.825-1.175T8 12q0-1.65 1.175-2.825T12 8q1.65 0 2.825 1.175T16 12q0 1.65-1.175 2.825T12 16" />
+                           </svg>
+                           Near me
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col col-sm-12 col-md-6 col-lg-4">
+                  <div class="time-wrap">
+                     <div class="mb-3">
+                        <label for="" class="form-label text-capitalize fw-500">Check-in/Out Date </label>
+                        <input type="date" class="form-control p-2 border border-primary" id=""
+                           placeholder="City, region, district or specific hotel">
+                     </div>                       
+                  </div>
+               </div>
+               <div class="col col-sm-12 col-md-12 col-lg-3">
+                  <div class="user-rooms">
+                     <div class="mb-3 position-relative">
+                        <label for="" class="form-label text-capitalize fw-500">Rooms & Guest</label>
+                        <div class="mb-3">
+                           <div class="select-room-guest bg-white p-2 rounded-2 d-flex justify-content-between align-items-center">
+                              <span class="fw-500">1 Room, 1 Guest</span>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="0.88em" height="1em" viewBox="0 0 448 512">
+                                 <path fill="currentColor" d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7L86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
+                              </svg>
+                           </div>
+                           <div class="select-room dropdown-menu p-3 w-100">
+                              <div class="mb-3 d-flex justify-content-between gap-2 align-items-center">
+                                 <label for="" class="form-label text-capitalize fw-500 text-secondary">Rooms</label>
+                                 <div
+                                    class="user-count-select bg-white d-flex justify-content-between align-items-center border border-primary p-2 rounded-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                       <path fill="currentColor" d="M18 11H6a2 2 0 0 0 0 4h12a2 2 0 0 0 0-4" />
+                                    </svg>
+                                    <input type="text" class="form-control border-0 mx-1 px-1 py-0 text-center" id=""
+                                       value="0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                       <path fill="currentColor"
+                                          d="M18 10h-4V6a2 2 0 0 0-4 0l.071 4H6a2 2 0 0 0 0 4l4.071-.071L10 18a2 2 0 0 0 4 0v-4.071L18 14a2 2 0 0 0 0-4" />
+                                    </svg>
+                                 </div>
+                              </div>
+                              <div class="mb-3 d-flex justify-content-between gap-2 align-items-center">
+                                 <label for="" class="form-label text-capitalize fw-500 text-secondary">Adults</label>
+                                 <div
+                                    class="user-count-select bg-white d-flex justify-content-between align-items-center border border-primary p-2 rounded-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                       <path fill="currentColor" d="M18 11H6a2 2 0 0 0 0 4h12a2 2 0 0 0 0-4" />
+                                    </svg>
+                                    <input type="text" class="form-control border-0 mx-1 px-1 py-0 text-center" id=""
+                                       value="0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                       <path fill="currentColor"
+                                          d="M18 10h-4V6a2 2 0 0 0-4 0l.071 4H6a2 2 0 0 0 0 4l4.071-.071L10 18a2 2 0 0 0 4 0v-4.071L18 14a2 2 0 0 0 0-4" />
+                                    </svg>
+                                 </div>
+                              </div>
+                              <div class="mb-3 d-flex justify-content-between gap-2 align-items-center">
+                                 <label for="" class="form-label text-capitalize fw-500 text-secondary">Children</label>
+                                 <div
+                                    class="user-count-select bg-white d-flex justify-content-between align-items-center border border-primary p-2 rounded-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                       <path fill="currentColor" d="M18 11H6a2 2 0 0 0 0 4h12a2 2 0 0 0 0-4" />
+                                    </svg>
+                                    <input type="text" class="form-control border-0 mx-1 px-1 py-0 text-center" id=""
+                                       value="0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                       <path fill="currentColor"
+                                          d="M18 10h-4V6a2 2 0 0 0-4 0l.071 4H6a2 2 0 0 0 0 4l4.071-.071L10 18a2 2 0 0 0 4 0v-4.071L18 14a2 2 0 0 0 0-4" />
+                                    </svg>
+                                 </div>
+                              </div>
+                              <div class="text-center">
+                                 <button class="btn btn-sm btn-secondary">
+                                   Apply
+                                 </button>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                    
+                  </div>
+                  
+               </div>
+               <div class="btn-search-box position-relative mt-2 mb-0">
+                  <button class="btn btn-primary border border-white px-4 px-lg-5">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="fs-5" width="1em" height="1em" viewBox="0 0 56 56">
+                        <path fill="currentColor"
+                           d="M23.957 41.77a18.02 18.02 0 0 0 10.477-3.376l11.109 11.11a2.658 2.658 0 0 0 1.898.773c1.524 0 2.625-1.172 2.625-2.672c0-.703-.234-1.359-.75-1.874L38.277 34.668c2.32-3.047 3.703-6.82 3.703-10.922c0-9.914-8.109-18.023-18.023-18.023c-9.937 0-18.023 8.109-18.023 18.023S14.02 41.77 23.957 41.77m0-3.891c-7.758 0-14.133-6.398-14.133-14.133c0-7.734 6.375-14.133 14.133-14.133c7.734 0 14.133 6.399 14.133 14.133c0 7.735-6.399 14.133-14.133 14.133" />
+                     </svg>
+                     <span class="ps-2 fs-5 text-capitalize fw-500s">search</span>
+                  </button>
+               </div>
+            </div>
+         </form>
+      </div>
+   </section>
+   <!-- banner sec  -->
+
+   <!-- list item  -->
+   <section class="list-sec py-4 py-lg-5">
+      <div class="container">
+         <div class="row">
+            <div class="col-12 col-lg-12 col-xl-4">
+               <div class="filter-wrap">
+                  <div class="accordion" id="accordionExample">
+                     <div class="accordion-item">
+                        <h2 class="accordion-header" id="filterItemOne">
+                           <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#filterOne" aria-expanded="true" aria-controls="filterOne">
+                              North Bengal Offbeat
+                              <!-- <span class="place-count">(50)</span> -->
+                           </button>
+                        </h2>
+                        <div id="filterOne" class="accordion-collapse collapse show" aria-labelledby="filterItemOne"
+                           data-bs-parent="#accordionExample">
+                           <div class="accordion-body max-height-body">
+                              <label class="filter-label">Bijanbari
+                                 <input type="checkbox" checked="checked">
+                                 <span class="checkmark"></span>
+                              </label>
+                              <label class="filter-label">Ahaldara
+                                 <input type="checkbox">
+                                 <span class="checkmark"></span>
+                              </label>
+                              <label class="filter-label">Sittong
+                                 <input type="checkbox">
+                                 <span class="checkmark"></span>
+                              </label>
+                              <label class="filter-label">Takdah
+                                 <input type="checkbox">
+                                 <span class="checkmark"></span>
+                              </label>
+                              <label class="filter-label">Dawaipani
+                                 <input type="checkbox">
+                                 <span class="checkmark"></span>
+                              </label>
+                              <label class="filter-label">Kalej Valley
+                                 <input type="checkbox">
+                                 <span class="checkmark"></span>
+                              </label>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="accordion-item">
+                        <h2 class="accordion-header" id="filterItemTwo">
+                           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#filterTwo" aria-expanded="false" aria-controls="filterTwo">
+                              Kalimpong & offbeat
+                           </button>
+                        </h2>
+                        <div id="filterTwo" class="accordion-collapse collapse" aria-labelledby="filterItemTwo"
+                           data-bs-parent="#accordionExample">
+                           <div class="accordion-body max-height-body">
+                              <label class="filter-label">Bijanbari
+                                 <input type="checkbox" checked="checked">
+                                 <span class="checkmark"></span>
+                              </label>
+                              <label class="filter-label">Ahaldara
+                                 <input type="checkbox">
+                                 <span class="checkmark"></span>
+                              </label>
+                              <label class="filter-label">Sittong
+                                 <input type="checkbox">
+                                 <span class="checkmark"></span>
+                              </label>
+                              <label class="filter-label">Takdah
+                                 <input type="checkbox">
+                                 <span class="checkmark"></span>
+                              </label>
+                              <label class="filter-label">Dawaipani
+                                 <input type="checkbox">
+                                 <span class="checkmark"></span>
+                              </label>
+                              <label class="filter-label">Kalej Valley
+                                 <input type="checkbox">
+                                 <span class="checkmark"></span>
+                              </label>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="accordion-item">
+                        <h2 class="accordion-header" id="filterItemThree">
+                           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#filterThree" aria-expanded="false" aria-controls="filterThree">
+                              Kurseong & Offbeat
+                           </button>
+                        </h2>
+                        <div id="filterThree" class="accordion-collapse collapse" aria-labelledby="filterItemThree"
+                           data-bs-parent="#accordionExample">
+                           <div class="accordion-body max-height-body">
+                              <label class="filter-label">Bijanbari
+                                 <input type="checkbox" checked="checked">
+                                 <span class="checkmark"></span>
+                              </label>
+                              <label class="filter-label">Ahaldara
+                                 <input type="checkbox">
+                                 <span class="checkmark"></span>
+                              </label>
+                              <label class="filter-label">Sittong
+                                 <input type="checkbox">
+                                 <span class="checkmark"></span>
+                              </label>
+                              <label class="filter-label">Takdah
+                                 <input type="checkbox">
+                                 <span class="checkmark"></span>
+                              </label>
+                              <label class="filter-label">Dawaipani
+                                 <input type="checkbox">
+                                 <span class="checkmark"></span>
+                              </label>
+                              <label class="filter-label">Kalej Valley
+                                 <input type="checkbox">
+                                 <span class="checkmark"></span>
+                              </label>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-12 col-lg-12 col-xl-8">
+               <div class="list-wrap">
+                  <div class="list-item shadow mb-3">
+                     <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                           <a href="hotel_details.html" class="w-100 mb-2 mb-md-0 d-block h-100">
+                              <img src="./assets/images/hotel-1.png" alt="" class="w-100 h-100 object-fit-cover">
+                           </a>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
+                           <div class="hotel-card-content w-100 d-flex flex-column gap-1 py-3 pe-2 pe-lg-3">
+                              <div class="d-flex flex-wrap justify-content-between">
+                                 <div>
+                                    <h5 class="list-title mb-1">Lamahatta Pine Homestay</h5>
+                                    <p class="text-secondary text-xs">Lamahatta</p>
+                                 </div>
+                                 <div class="">
+                                    <div class="d-flex gap-2 align-items-center">
+                                       <div class="review-text">
+                                          <h6 class="m-0 fw-semibold">Review score</h6>
+                                          <p class="text-secondary text-end text-xs">150 Ratings</p>
+                                       </div>
+                                       <div class="ratings bg-gradient-cus text-white rounded-2 py-1 px-2 fs-5 fw-500">
+                                          5.0
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <h6 class="my-1">Benefits</h6>
+                              <ul class="benefit-list ps-3 mb-2">
+                                 <li>Tariff is for per head per day rooms&nbsp; including AP Plan&nbsp;– Breakfast,
+                                    Lunch, Evening Tea &amp; Snacks, Dinner.</li>
+                                 <li>Bonfire and BBQ on request (Additional Cost).</li>
+                                 <li>Child Policy :&nbsp; &nbsp;Below 5 years Complimentary,5 to 9 years 50% of the
+                                    Tariff and above 10 full charge... <a href="" class="text-secondary">Read More</a>
+                                 </li>
+
+                              </ul>
+                              <div class="d-flex justify-content-between align-items-center">
+                                 <div class="d-flex flex-column">
+                                    <p class="xs-text">Starting with</p>
+                                    <h6 class="fs-5 fw-semibold">₹ 1500</h6>
+                                    <!-- <p class="xs-text">+ $100 taxes & fees</p> -->
+                                 </div>
+                                 <div>
+                                    <button class="btn btn-primary">
+                                       <a href="list-details.html" class="text-white">See availability</a>
+                                    </button>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="list-item shadow mb-3">
+                     <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                           <a href="hotel_details.html" class="w-100 mb-2 mb-md-0 d-block h-100">
+                              <img src="./assets/images/hotel-1.png" alt="" class="w-100 h-100 object-fit-cover">
+                           </a>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
+                           <div class="hotel-card-content w-100 d-flex flex-column gap-1 py-3 pe-2 pe-lg-3">
+                              <div class="d-flex flex-wrap justify-content-between">
+                                 <div>
+                                    <h5 class="list-title mb-1">Lamahatta Pine Homestay</h5>
+                                    <p class="text-secondary text-xs">Lamahatta</p>
+                                 </div>
+                                 <div class="">
+                                    <div class="d-flex gap-2 align-items-center">
+                                       <div class="review-text">
+                                          <h6 class="m-0 fw-semibold">Review score</h6>
+                                          <p class="text-secondary text-end text-xs">150 Ratings</p>
+                                       </div>
+                                       <div class="ratings bg-gradient-cus text-white rounded-2 py-1 px-2 fs-5 fw-500">
+                                          5.0
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <h6 class="my-1">Benefits</h6>
+                              <ul class="benefit-list ps-3 mb-2">
+                                 <li>Tariff is for per head per day rooms&nbsp; including AP Plan&nbsp;– Breakfast,
+                                    Lunch, Evening Tea &amp; Snacks, Dinner.</li>
+                                 <li>Bonfire and BBQ on request (Additional Cost).</li>
+                                 <li>Child Policy :&nbsp; &nbsp;Below 5 years Complimentary,5 to 9 years 50% of the
+                                    Tariff and above 10 full charge... <a href="" class="text-secondary">Read More</a>
+                                 </li>
+
+                              </ul>
+                              <div class="d-flex justify-content-between align-items-center">
+                                 <div class="d-flex flex-column">
+                                    <p class="xs-text">Starting with</p>
+                                    <h6 class="fs-5 fw-semibold">₹ 1500</h6>
+                                    <!-- <p class="xs-text">+ $100 taxes & fees</p> -->
+                                 </div>
+                                 <div>
+                                    <button class="btn btn-primary">
+                                       <a href="list-details.html" class="text-white">See availability</a>
+                                    </button>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <nav aria-label="..." class="mt-4 mt-lg-5">
+                  <ul class="pagination justify-content-center mb-0">
+                     <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                     </li>
+                     <li class="page-item"><a class="page-link" href="#">1</a></li>
+                     <li class="page-item active" aria-current="page">
+                        <a class="page-link" href="#">2</a>
+                     </li>
+                     <li class="page-item"><a class="page-link" href="#">3</a></li>
+                     <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                     </li>
+                  </ul>
+               </nav>
+            </div>
+         </div>
+   </section>
+   <!-- list item  -->
+
+   <!-- download app section  -->
+   <section class="download-app-sec py-5">
+      <div class="container">
+         <div class="downloadApp-content p-3 p-md-4 p-lg-5">
+            <div class="row align-items-center">
+               <div class="col-sm-12 col-md-12 col-xl-7 col-xl-7 text-start text-md-center text-xl-start">
+                  <div class="App-content">
+                     <h2 class="section-title text-white">
+                        Ready to Get Download APP
+                     </h2>
+                     <p class="text-white">
+                        Create your account and Boost your Career.
+                     </p>
+                  </div>
+               </div>
+               <div class="col-sm-12 col-md-12 col-xl-5 col-xl-5">
+                  <div
+                     class="app-images d-flex flex-column flex-sm-row justify-content-start justify-content-md-center justify-content-xl-start">
+                     <a href="#"><img src="./assets/images/gplay.png" alt="" class="py-2" /></a>
+                     <a href="#"><img src="./assets/images/app.png" alt="" /></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- download app section  -->
+
+   <!-- popular search section start -->
+   <section class="popular-sec pb-4 pb-lg-5">
+      <div class="container">
+         <div class="row">
+            <div class="col-12 col-xl-6">
+               <h2 class="fs-4 mb-2 mb-lg-3">
+                  Most popular searches
+               </h2>
+               <div class="popular-search-wrap position-relative">
+                  <ul aria-labelledby="more-popular-searches" class="list-inline popular-search-list pe-3">
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Pune</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Varanasi</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Chennai</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Singapore</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Dubai</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Puri</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Chandigarh</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Kolkata</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Gurgaon</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Lucknow</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Mahabaleshwar</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Agra</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Singapore</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Dubai</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Puri</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Varanasi</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Chennai</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Singapore</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Dubai</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Puri</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Chandigarh</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Kolkata</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Gurgaon</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Lucknow</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Mahabaleshwar</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Agra</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Singapore</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Dubai</a>
+                     </li>
+                     <li>
+                        <a href="" class="block max-w-full text-m font-bold truncate">Hotels in Puri</a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="col-12 col-xl-6">
+               <h2 class="text-capitalize fs-4 mb-2 mb-lg-3">why book with bookingRoute</h2>
+               <div class="popular-search-wrap position-relative">
+                  <div class="accordion popular-search-list" id="accordionExample">
+                     <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                           <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                              Accordion Item #1
+                           </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                           data-bs-parent="#accordionExample">
+                           <div class="accordion-body">
+                              <strong>This is the first item's accordion body.</strong> It is shown by default, until
+                              the collapse plugin adds the appropriate classes that we use to style each element. These
+                              classes control the overall appearance, as well as the showing and hiding via CSS
+                              transitions. You can modify any of this with custom CSS or overriding our default
+                              variables.
+                           </div>
+                        </div>
+                     </div>
+                     <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                              Accordion Item #2
+                           </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                           data-bs-parent="#accordionExample">
+                           <div class="accordion-body">
+                              <strong>This is the second item's accordion body.</strong> It is hidden by default, until
+                              the collapse plugin adds the appropriate classes that we use to style each element. These
+                              classes control the overall appearance, as well as the showing and hiding via CSS
+                              transitions.
+                           </div>
+                        </div>
+                     </div>
+                     <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                              Accordion Item #3
+                           </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                           data-bs-parent="#accordionExample">
+                           <div class="accordion-body">
+                              <strong>This is the third item's accordion body.</strong> It is hidden by default, until
+                              the collapse plugin adds the appropriate classes that we use to style each element. These
+                              classes control the overall appearance, as well as the showing and hiding via CSS
+                              transitions. You can modify any of this with custom CSS or overriding our default
+                              variables. It's also worth noting that just about any HTML can go within the
+                              <code>.accordion-body</code>, though the transition does limit overflow.
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- footer section  -->
+   <footer class="footer-sec py-5 text-white">
+      <div class="container">
+         <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+               <div class="footer-about d-flex flex-column gap-3 px-3">
+                  <a href="./index.html">
+                     <img src="./assets/images/Logo.png" alt="" width="180" />
+                  </a>
+                  <p class="common-text medium-font-size mb-3">
+                     Building a next-generation collaborative platform to connect
+                     renters, homeowners, and agents.
+                  </p>
+                  <form action="#" class="d-flex gap-3">
+                     <input type="email" name="footerEmail" id="footerEmail" placeholder="Email id"
+                        class="footer-input w-75" />
+                     <button class="btn btn-primary px-4 py-1">Send</button>
+                  </form>
+               </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 mt-3 mt-md-0">
+               <div class="footer-service small-font-size  px-3">
+                  <h4 class="footer-title footer-title-font">Services</h4>
+                  <ul class="list-unstyled">
+                     <div class="row">
+                        <div class="col-sm-6">
+                           <li class="py-1 py-lg-2">
+                              <a href="">Property
+                              </a>
+                           </li>
+                        </div>
+
+                        <div class="col-sm-6">
+                           <li class="py-1 py-lg-2">
+                              <a href="">Personal Shopper
+                              </a>
+                           </li>
+                        </div>
+
+                        <div class="col-sm-6">
+                           <li class="py-1 py-lg-2">
+                              <a href="">Hotel
+                              </a>
+                           </li>
+                        </div>
+
+                        <div class="col-sm-6">
+                           <li class="py-1 py-lg-2">
+                              <a href="">Luxury Rides
+                              </a>
+                           </li>
+                        </div>
+
+                        <div class="col-sm-6">
+                           <li class="py-1 py-lg-2">
+                              <a href="">Taxi
+                              </a>
+                           </li>
+                        </div>
+
+                        <div class="col-sm-6">
+                           <li class="py-1 py-lg-2">
+                              <a href="">Tour Bus
+                              </a>
+                           </li>
+                        </div>
+
+                        <div class="col-sm-6">
+                           <li class="py-1 py-lg-2">
+                              <a href="">Dispatch Rider
+                              </a>
+                           </li>
+                        </div>
+                     </div>
+                  </ul>
+               </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-2 col-xl-2 mt-md-3 mt-lg-0">
+               <div class="footer-company small-font-size px-3">
+                  <h4 class="footer-title footer-title-font">Company</h4>
+                  <ul class="list-unstyled">
+                     <li class="py-1 py-lg-2">
+                        <a href="../about_us.html">About Us
+                        </a>
+                     </li>
+                     <li class="py-1 py-lg-2">
+                        <a href="../blog_list.html">Blogs
+                        </a>
+                     </li>
+                     <li class="py-1 py-lg-2">
+                        <a href="../career.html">Careers
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-2 col-xl-2 mt-md-3 mt-lg-0">
+               <div class="footer-support small-font-size px-3">
+                  <h4 class="footer-title footer-title-font">Support</h4>
+                  <ul class="list-unstyled">
+                     <li class="py-1 py-lg-2">
+                        <a href="../contact_us.html">Contact
+                        </a>
+                     </li>
+                     <li class="py-1 py-lg-2">
+                        <a href="../privacy_policy.html">Privacy
+                        </a>
+                     </li>
+                     <li class="py-1 py-lg-2">
+                        <a href="../terms_condition.html">Terms
+                        </a>
+                     </li>
+                     <li class="py-1 py-lg-2">
+                        <a href="../faq.html">FAQ
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+   <div class="footer-bottm-sec">
+      <div class="container">
+         <!-- copyright section  -->
+         <div
+            class="footer-copyright d-flex justify-content-between py-2 py-md-3 py-lg-4 flex-column flex-sm-row align-items-center">
+            <div class="social-icon d-flex gap-2">
+               <a href="#">
+                  <div class="icon-bg btn bg-white">
+                     <iconify-icon icon="ri:facebook-fill" class="text-primary"></iconify-icon>
+                  </div>
+               </a>
+
+               <a href="#">
+                  <div class="icon-bg btn bg-white">
+                     <iconify-icon icon="ri:linkedin-fill" class="text-primary"></iconify-icon>
+                  </div>
+               </a>
+
+               <a href="#">
+                  <div class="icon-bg btn bg-white">
+                     <iconify-icon icon="mdi:twitter" class="text-primary"></iconify-icon>
+                  </div>
+               </a>
+            </div>
+            <div class="copyright-text text-white mt-2 mt-sm-0">Copyright © BookingRoute 2024</div>
+         </div>
+         <!-- copyright section  -->
+      </div>
+   </div>
+   <!-- footer section  -->
+
+   <!-- bootstrap cdn js  -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+   <!-- iconify link js  -->
+   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+   <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
